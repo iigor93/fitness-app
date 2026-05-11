@@ -2,27 +2,24 @@ import { useState } from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
-  Pressable,
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
   View,
 } from 'react-native';
 
 import { ScreenContainer } from '../components/layout/ScreenContainer';
+import { AppButton } from '../components/ui/AppButton';
+import { AppCard } from '../components/ui/AppCard';
+import { AppTextInput } from '../components/ui/AppTextInput';
+import { colors } from '../theme/colors';
 import { spacing } from '../theme/spacing';
+import { typography } from '../theme/typography';
 
 type OnboardingScreenProps = {
   isSubmitting: boolean;
   onSubmit: (name: string) => Promise<void>;
 };
-
-const headingFontFamily = Platform.select({
-  android: 'sans-serif-condensed',
-  ios: 'AvenirNext-DemiBold',
-  default: 'sans-serif',
-});
 
 export function OnboardingScreen({
   isSubmitting,
@@ -60,8 +57,8 @@ export function OnboardingScreen({
             <Text style={styles.title}>Добро пожаловать</Text>
           </View>
 
-          <View style={styles.card}>
-            <TextInput
+          <AppCard style={styles.card}>
+            <AppTextInput
               autoCapitalize="words"
               autoCorrect={false}
               editable={!isSubmitting}
@@ -73,28 +70,18 @@ export function OnboardingScreen({
               }}
               onSubmitEditing={handleSubmit}
               placeholder="Введите ваше имя"
-              placeholderTextColor="#656565"
               returnKeyType="done"
-              style={styles.input}
               value={name}
             />
 
             {error ? <Text style={styles.error}>{error}</Text> : null}
 
-            <Pressable
+            <AppButton
               disabled={isSubmitting}
+              label={isSubmitting ? 'Сохраняем...' : 'Продолжить'}
               onPress={handleSubmit}
-              style={({ pressed }) => [
-                styles.button,
-                pressed && !isSubmitting ? styles.buttonPressed : null,
-                isSubmitting ? styles.buttonDisabled : null,
-              ]}
-            >
-              <Text style={styles.buttonText}>
-                {isSubmitting ? 'Сохраняем...' : 'Продолжить'}
-              </Text>
-            </Pressable>
-          </View>
+            />
+          </AppCard>
 
           <Text style={styles.caption}>
             Продолжая, вы соглашаетесь с нашей политикой конфиденциальности и
@@ -121,67 +108,19 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xl,
   },
   title: {
-    color: '#F3E4D2',
-    fontFamily: headingFontFamily,
-    fontSize: 34,
-    fontWeight: '700',
-    lineHeight: 40,
-    textTransform: 'uppercase',
+    color: colors.textAccent,
+    ...typography.title,
   },
   card: {
-    backgroundColor: '#1B1D1D',
-    borderColor: '#4C4C4C',
-    borderRadius: 0,
-    borderWidth: 1,
-    gap: spacing.md,
     marginBottom: spacing.xl,
-    paddingHorizontal: spacing.lg,
-    paddingVertical: 28,
-  },
-  input: {
-    borderBottomColor: '#5A5A5A',
-    borderBottomWidth: 1,
-    color: '#F0F0F0',
-    fontFamily: headingFontFamily,
-    fontSize: 25,
-    fontWeight: '700',
-    paddingBottom: spacing.sm,
-    paddingTop: spacing.xs,
   },
   error: {
-    color: '#FF8A8A',
-    fontFamily: headingFontFamily,
+    ...typography.sectionLabel,
+    color: colors.danger,
     fontSize: 14,
   },
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#FF120D',
-    borderRadius: 0,
-    justifyContent: 'center',
-    marginTop: spacing.md,
-    paddingHorizontal: spacing.lg,
-    paddingVertical: 18,
-  },
-  buttonPressed: {
-    opacity: 0.92,
-  },
-  buttonDisabled: {
-    opacity: 0.7,
-  },
-  buttonText: {
-    color: '#FFF4EF',
-    fontFamily: headingFontFamily,
-    fontSize: 20,
-    fontWeight: '800',
-    textAlign: 'center',
-    textTransform: 'uppercase',
-  },
   caption: {
-    color: '#77706A',
-    fontFamily: headingFontFamily,
-    fontSize: 12,
-    lineHeight: 22,
-    textAlign: 'center',
-    textTransform: 'uppercase',
+    color: colors.textMuted,
+    ...typography.caption,
   },
 });

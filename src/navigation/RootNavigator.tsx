@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import { DumbbellLogo } from '../components/ui/DumbbellLogo';
 import { OnboardingScreen } from '../screens/OnboardingScreen';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import {
@@ -11,6 +12,7 @@ import {
   type AppInstance,
 } from '../services/storage/instanceStorage';
 import { colors } from '../theme/colors';
+import { typography } from '../theme/typography';
 import type { RootStackParamList } from './types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -100,8 +102,8 @@ export function RootNavigator() {
   if (isBootstrapping) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator color={colors.primary} size="large" />
-        <Text style={styles.loadingText}>Загружаем данные...</Text>
+        <DumbbellLogo size={116} />
+        <Text style={styles.loadingText}>IRON TRACK</Text>
       </View>
     );
   }
@@ -145,13 +147,15 @@ export function RootNavigator() {
 const styles = StyleSheet.create({
   loadingContainer: {
     alignItems: 'center',
-    backgroundColor: '#000000',
+    backgroundColor: colors.background,
     flex: 1,
-    gap: 16,
+    gap: 20,
     justifyContent: 'center',
   },
   loadingText: {
-    color: '#8A847E',
-    fontSize: 15,
+    color: colors.textAccent,
+    ...typography.sectionLabel,
+    fontSize: 18,
+    letterSpacing: 1.4,
   },
 });
