@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IRON TRACK - CREATE TRAINING SET</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=Hanken+Grotesk:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#c00100",
+                    "on-primary": "#690100",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "error": "#ffb4ab",
+                    "background": "#121414",
+                    "on-tertiary-container": "#292a2a",
+                    "on-surface-variant": "#ebbbb4",
+                    "on-error": "#690005",
+                    "on-background": "#e2e2e2",
+                    "on-primary-fixed": "#410000",
+                    "tertiary-fixed": "#e4e2e2",
+                    "surface-bright": "#37393a",
+                    "error-container": "#93000a",
+                    "outline-variant": "#603e39",
+                    "primary": "#ffb4a8",
+                    "on-secondary-container": "#b6b5b4",
+                    "primary-fixed": "#ffdad4",
+                    "surface-container": "#1e2020",
+                    "primary-container": "#ff5540",
+                    "surface-container-highest": "#333535",
+                    "outline": "#b18780",
+                    "inverse-surface": "#e2e2e2",
+                    "secondary-fixed": "#e4e2e1",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-container-low": "#1a1c1c",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-secondary": "#303030",
+                    "secondary-container": "#474746",
+                    "secondary": "#c8c6c5",
+                    "surface": "#121414",
+                    "tertiary": "#c8c6c6",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-tertiary": "#303030",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-tint": "#ffb4a8",
+                    "on-primary-container": "#5c0000",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "surface-variant": "#333535",
+                    "surface-container-high": "#282a2b",
+                    "on-surface": "#e2e2e2",
+                    "tertiary-container": "#919090",
+                    "inverse-on-surface": "#2f3131",
+                    "surface-dim": "#121414",
+                    "on-primary-fixed-variant": "#930100",
+                    "tertiary-fixed-dim": "#c8c6c6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "12px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "container-margin": "20px",
+                    "md": "16px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Space Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "label-caps": ["Space Grotesk"],
+                    "headline-lg": ["Space Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="flex items-center justify-between px-container-margin h-16 w-full bg-background dark:bg-background border-b border-secondary-container dark:border-secondary-container">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="fitness_center">fitness_center</span>
+<span class="font-headline-md text-headline-md font-black tracking-tighter text-on-background dark:text-on-background">IRON TRACK</span>
+</div>
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="close">close</span>
+</button>
+</header>
+<main class="flex-grow flex flex-col px-container-margin py-lg gap-xl max-w-2xl mx-auto w-full">
+<!-- Hero Section -->
+<section class="space-y-sm">
+<h1 class="font-display-lg text-display-lg uppercase tracking-tight text-on-background">Новая программа</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Создайте структуру вашего тренировочного процесса. Укажите название и интенсивность.</p>
+</section>
+<!-- Form Layout -->
+<form class="space-y-xl">
+<!-- Name Input Group -->
+<div class="group">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-xs block" for="program-name">НАЗВАНИЕ ПРОГРАММЫ</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-secondary-container focus:border-primary-container focus:ring-0 px-0 py-sm font-headline-md text-headline-md transition-colors placeholder:text-surface-variant" id="program-name" placeholder="Например: Гипертрофия 2.0" type="text"/>
+</div>
+<!-- Frequency Grid (Asymmetric Selection) -->
+<div class="space-y-md">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">КОЛИЧЕСТВО ДНЕЙ В НЕДЕЛЮ</label>
+<div class="grid grid-cols-4 gap-sm">
+<button class="border-2 border-secondary-container p-lg flex flex-col items-center justify-center gap-xs hover:border-primary transition-all active:scale-95 group" type="button">
+<span class="font-display-lg text-display-lg">2</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary">ДНЯ</span>
+</button>
+<button class="border-2 border-primary-container bg-surface-container-highest p-lg flex flex-col items-center justify-center gap-xs active:scale-95 group" type="button">
+<span class="font-display-lg text-display-lg text-primary">3</span>
+<span class="font-label-caps text-label-caps text-primary">ДНЯ</span>
+</button>
+<button class="border-2 border-secondary-container p-lg flex flex-col items-center justify-center gap-xs hover:border-primary transition-all active:scale-95 group" type="button">
+<span class="font-display-lg text-display-lg">4</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary">ДНЯ</span>
+</button>
+<button class="border-2 border-secondary-container p-lg flex flex-col items-center justify-center gap-xs hover:border-primary transition-all active:scale-95 group" type="button">
+<span class="font-display-lg text-display-lg">5</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary">ДНЕЙ</span>
+</button>
+</div>
+</div>
+<!-- Advanced Settings (Glassmorphism Styled Card) -->
+<div class="bg-surface-container-low border border-secondary-container p-md flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 flex items-center justify-center bg-primary-container rounded">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="bolt">bolt</span>
+</div>
+<div>
+<p class="font-headline-md text-[18px] text-on-background">Режим высокой интенсивности</p>
+<p class="font-body-md text-label-caps text-on-surface-variant">Автоматический расчет RPE</p>
+</div>
+</div>
+<div class="w-14 h-8 bg-secondary-container rounded-full relative flex items-center px-1">
+<div class="w-6 h-6 bg-surface-bright rounded-full"></div>
+</div>
+</div>
+<!-- Visualization Element -->
+<div class="relative w-full aspect-video rounded-lg overflow-hidden border border-secondary-container mt-lg">
+<img alt="Workout environment" class="w-full h-full object-cover grayscale opacity-40" data-alt="A cinematic, high-contrast shot of a dark, professional fitness facility featuring heavy iron equipment and architectural steel beams. The lighting is dramatic and moody, focusing on sharp edges and metallic textures with subtle red neon highlights reflecting off the floors. The overall aesthetic is brutalist and intense, perfectly matching a high-performance training atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBipm_wnU_ygTTJpT9oy01If9NFFCF_WKuCF8_3uUa8bbJuo-IA-txGxBJT3PWnB4PsmKg6q21eQmFnJ8W_Mu0I-9cGAqhT1tUE-At6AAfmzPR-FPj-JDgNpxNaBKmmRd1pKIz8lhReA4cFWVbCF-zLOQ8F0v8MrCyF-Jp_YQ9lVtpgvv7uY7sc_jKPde2jBzhKeQr59OIjQZvXYgc2M0HDnXkEHWiailGSs3bwtfr4VNK7dKBWJfnExvodPMgqATXRhZ1Om4Ub0Wo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-md left-md">
+<span class="font-label-caps text-label-caps bg-primary text-on-primary px-sm py-1 mb-xs inline-block">В ПИКЕ ФОРМЫ</span>
+<h3 class="font-headline-lg text-headline-lg text-on-background">СТАНЬ СИЛЬНЕЕ</h3>
+</div>
+</div>
+<!-- CTA -->
+<div class="pt-lg">
+<button class="w-full bg-primary-container text-on-primary-container font-headline-md py-lg uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all" type="submit">
+                    СОХРАНИТЬ
+                </button>
+</div>
+</form>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 bg-background dark:bg-background border-t border-secondary-container dark:border-secondary-container pb-safe">
+<a class="text-on-surface-variant dark:text-on-surface-variant active:scale-90 transition-all duration-200 hover:text-on-background" href="#">
+<span class="material-symbols-outlined" data-icon="home_storage">home_storage</span>
+</a>
+<a class="text-primary dark:text-primary scale-110 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center" data-weight="fill" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant active:scale-90 transition-all duration-200 hover:text-on-background" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant active:scale-90 transition-all duration-200 hover:text-on-background" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</nav>
+<!-- Spacer for navigation -->
+<div class="h-24"></div>
+</body></html>

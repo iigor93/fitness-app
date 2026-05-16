@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 
+import { ScreenContainer } from '../components/layout/ScreenContainer';
 import { AppButton } from '../components/ui/AppButton';
 import { AppCard } from '../components/ui/AppCard';
 import type { AppInstance } from '../services/storage/instanceStorage';
-import { ScreenContainer } from '../components/layout/ScreenContainer';
 import { colors } from '../theme/colors';
 import { spacing } from '../theme/spacing';
 import { typography } from '../theme/typography';

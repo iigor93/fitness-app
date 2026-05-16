@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Hanken+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #000000;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #555555;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#c00100",
+                      "on-primary": "#690100",
+                      "primary-fixed-dim": "#ffb4a8",
+                      "on-tertiary-fixed": "#1b1c1c",
+                      "error": "#ffb4ab",
+                      "background": "#121414",
+                      "on-tertiary-container": "#292a2a",
+                      "on-surface-variant": "#ebbbb4",
+                      "on-error": "#690005",
+                      "on-background": "#e2e2e2",
+                      "on-primary-fixed": "#410000",
+                      "tertiary-fixed": "#e4e2e2",
+                      "surface-bright": "#37393a",
+                      "error-container": "#93000a",
+                      "outline-variant": "#603e39",
+                      "primary": "#ffb4a8",
+                      "on-secondary-container": "#b6b5b4",
+                      "primary-fixed": "#ffdad4",
+                      "surface-container": "#1e2020",
+                      "primary-container": "#ff5540",
+                      "surface-container-highest": "#333535",
+                      "outline": "#b18780",
+                      "inverse-surface": "#e2e2e2",
+                      "secondary-fixed": "#e4e2e1",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "surface-container-low": "#1a1c1c",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#474746",
+                      "on-secondary": "#303030",
+                      "secondary-container": "#474746",
+                      "secondary": "#c8c6c5",
+                      "surface": "#121414",
+                      "tertiary": "#c8c6c6",
+                      "surface-container-lowest": "#0c0f0f",
+                      "on-tertiary": "#303030",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "surface-tint": "#ffb4a8",
+                      "on-primary-container": "#5c0000",
+                      "on-tertiary-fixed-variant": "#464747",
+                      "surface-variant": "#333535",
+                      "surface-container-high": "#282a2b",
+                      "on-surface": "#e2e2e2",
+                      "tertiary-container": "#919090",
+                      "inverse-on-surface": "#2f3131",
+                      "surface-dim": "#121414",
+                      "on-primary-fixed-variant": "#930100",
+                      "tertiary-fixed-dim": "#c8c6c6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "12px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "container-margin": "20px",
+                      "md": "16px",
+                      "unit": "4px",
+                      "xs": "4px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Space Grotesk"],
+                      "body-md": ["Hanken Grotesk"],
+                      "label-caps": ["Space Grotesk"],
+                      "headline-lg": ["Space Grotesk"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "display-lg": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface bg-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background text-primary font-headline-md text-headline-md docked full-width top-0 border-b border-secondary-container flat no shadows flex items-center justify-between px-container-margin h-16 w-full z-40 sticky">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="fitness_center">fitness_center</span>
+<h1 class="font-headline-md text-headline-md font-black tracking-tighter text-on-background">IRON TRACK</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-primary">00:42:15</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">ВРЕМЯ</span>
+</div>
+<button class="material-symbols-outlined hover:text-primary transition-colors active:scale-95" data-icon="more_vert">more_vert</button>
+</div>
+</header>
+<main class="flex-1 px-container-margin py-lg custom-scrollbar overflow-y-auto">
+<!-- Dashboard Summary Bento Style -->
+<div class="grid grid-cols-2 gap-xs mb-lg">
+<div class="col-span-2 p-md bg-[#2A2A2A] border border-[#555555] flex justify-between items-center">
+<div>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant mb-xs">ТЕКУЩАЯ ТРЕНИРОВКА</h2>
+<p class="font-headline-md text-headline-md">ГРУДЬ И ТРИЦЕПС</p>
+</div>
+<div class="h-12 w-12 border-2 border-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" data-icon="bolt">bolt</span>
+</div>
+</div>
+</div>
+<!-- Exercise List -->
+<div class="space-y-md pb-32">
+<!-- Exercise 1 (Active) -->
+<section class="bg-[#2A2A2A] border-t-4 border-[#FF0000] border-x border-b border-[#555555]">
+<div class="p-md flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Жим лежа штанги</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">4 ПОДХОДА • ОТДЫХ 90С</p>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+</div>
+<div class="px-md pb-md space-y-xs">
+<!-- Set Row Headings -->
+<div class="grid grid-cols-12 gap-xs font-label-caps text-[10px] text-on-surface-variant pb-xs border-b border-[#555555] mb-xs">
+<div class="col-span-2 text-center">СЕТ</div>
+<div class="col-span-4 text-center">ВЕС (КГ)</div>
+<div class="col-span-4 text-center">ПОВТ.</div>
+<div class="col-span-2 text-center">OK</div>
+</div>
+<!-- Set 1 (Completed) -->
+<div class="grid grid-cols-12 gap-xs items-center h-12 bg-surface-container-lowest/50 border-b border-[#555555]">
+<div class="col-span-2 text-center font-label-caps text-on-surface-variant">1</div>
+<div class="col-span-4 text-center font-headline-md text-headline-md text-on-surface">80</div>
+<div class="col-span-4 text-center font-headline-md text-headline-md text-on-surface">12</div>
+<div class="col-span-2 flex justify-center">
+<div class="w-6 h-6 bg-[#FF0000] flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[18px]" data-icon="check">check</span>
+</div>
+</div>
+</div>
+<!-- Set 2 (Active Focus) -->
+<div class="grid grid-cols-12 gap-xs items-center h-14 bg-surface-container-high border-x border-[#FF0000]">
+<div class="col-span-2 text-center font-label-caps text-primary">2</div>
+<div class="col-span-4 flex justify-center">
+<input class="w-full bg-transparent border-b-2 border-primary-container text-center font-headline-md text-headline-md text-on-surface focus:outline-none focus:border-[#FF0000] transition-colors" placeholder="80" type="number" value="80"/>
+</div>
+<div class="col-span-4 flex justify-center">
+<div class="flex items-center gap-xs">
+<button class="w-8 h-8 bg-[#2A2A2A] border border-[#555555] text-on-surface active:bg-primary-container">-</button>
+<span class="font-headline-md text-headline-md px-2">10</span>
+<button class="w-8 h-8 bg-[#2A2A2A] border border-[#555555] text-on-surface active:bg-primary-container">+</button>
+</div>
+</div>
+<div class="col-span-2 flex justify-center">
+<button class="w-8 h-8 border-2 border-[#555555] flex items-center justify-center hover:border-primary-container active:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-transparent" data-icon="check">check</span>
+</button>
+</div>
+</div>
+<!-- Set 3 -->
+<div class="grid grid-cols-12 gap-xs items-center h-12 border-b border-[#555555]">
+<div class="col-span-2 text-center font-label-caps text-on-surface-variant">3</div>
+<div class="col-span-4 text-center font-headline-md text-headline-md text-on-surface opacity-50">80</div>
+<div class="col-span-4 text-center font-headline-md text-headline-md text-on-surface opacity-50">10</div>
+<div class="col-span-2 flex justify-center">
+<button class="w-6 h-6 border border-[#555555]"></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Exercise 2 (Inactive) -->
+<section class="bg-[#2A2A2A] border border-[#555555]">
+<div class="p-md flex justify-between items-start opacity-70">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Разводка гантелей</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">3 ПОДХОДА • ОТДЫХ 60С</p>
+</div>
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+</div>
+</section>
+<!-- Image Asset for visual impact -->
+<div class="relative w-full aspect-video overflow-hidden border border-[#555555]">
+<img alt="Gym focus" class="w-full h-full object-cover grayscale contrast-125 brightness-50" data-alt="A gritty, black and white photograph of a professional gym environment focusing on a heavy barbell with plates. The lighting is high-contrast, dramatic, and moody, highlighting the metallic texture of the equipment. Vibrant red neon lights reflect off the floor surfaces, echoing the app's primary color palette. The atmosphere is intense, focused, and aggressive, perfect for a high-performance fitness brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDehbFf2-LuEOoAkNs0KBiwa1VeBQ_teKHwn1Z-cw1cgyQYUxjCKYwj00y2ef_WjD_y0AG2-MVXEnXvX9v6jr8k6YdTHWmdypV3uCRcmKuGGn-7qmkCTv51fQ4hMvwiwAuA8A1HEoZ0SPQX8dxcSb2UT6z9d3nkwseT8BeCvlwR22nxiy-oGdC640zdWYXan0LOMdf9zosbHWJHSZ3Xai81GX3oMqBwYqcIZ4M3Em76kpodkVY1dtJWgYZWAZ_usuqELnGf3PY7Bo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+<div class="absolute bottom-md left-md">
+<p class="font-label-caps text-label-caps text-primary">СОВЕТ ДНЯ</p>
+<p class="font-headline-md text-on-surface">Держите локти под углом 45 градусов</p>
+</div>
+</div>
+<!-- Exercise 3 -->
+<section class="bg-[#2A2A2A] border border-[#555555]">
+<div class="p-md flex justify-between items-start opacity-70">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Отжимания на брусьях</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">3 ПОДХОДА • СОБСТВ. ВЕС</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Actions and Tab Bar (Tab bar hidden per "Destination Rule" for task focus) -->
+<footer class="fixed bottom-0 w-full z-50 bg-background flex flex-col gap-xs pb-safe">
+<!-- Primary Action -->
+<div class="px-container-margin pb-md">
+<button class="w-full h-16 bg-white text-black font-headline-md text-headline-md uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-primary-container hover:text-white transition-all active:scale-[0.98]">
+<span>ЗАВЕРШИТЬ ТРЕНИРОВКУ</span>
+<span class="material-symbols-outlined" data-icon="flag">flag</span>
+</button>
+</div>
+<!-- Custom Navigation Container as per JSON Shell Layout -->
+<nav class="flex justify-around items-center h-16 bg-background border-t border-[#555555]">
+<button class="text-primary scale-110 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="home_storage">home_storage</span>
+</button>
+<button class="text-primary scale-110 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined font-variation-settings: 'FILL' 1;" data-icon="fitness_center">fitness_center</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-background active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-background active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</nav>
+</footer>
+</body></html>

@@ -4,9 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { DumbbellLogo } from '../components/ui/DumbbellLogo';
 import { OnboardingScreen } from '../screens/OnboardingScreen';
-import { ProfileScreen } from '../screens/ProfileScreen';
+import { WorkoutsScreen } from '../screens/WorkoutsScreen';
 import {
-  clearAppInstance,
   loadAppInstance,
   saveAppInstance,
   type AppInstance,
@@ -61,7 +60,6 @@ export function RootNavigator() {
   const [instance, setInstance] = useState<AppInstance | null>(null);
   const [isBootstrapping, setIsBootstrapping] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     async function bootstrap() {
@@ -89,16 +87,6 @@ export function RootNavigator() {
     }
   }
 
-  async function handleDeleteInstance() {
-    try {
-      setIsDeleting(true);
-      await clearAppInstance();
-      setInstance(null);
-    } finally {
-      setIsDeleting(false);
-    }
-  }
-
   if (isBootstrapping) {
     return (
       <View style={styles.loadingContainer}>
@@ -110,7 +98,7 @@ export function RootNavigator() {
 
   return (
     <Stack.Navigator
-      key={instance ? 'profile' : 'onboarding'}
+      key={instance ? 'workouts' : 'onboarding'}
       screenOptions={{
         headerShown: false,
         headerShadowVisible: false,
@@ -121,13 +109,9 @@ export function RootNavigator() {
       }}
     >
       {instance ? (
-        <Stack.Screen name="Profile">
+        <Stack.Screen name="Workouts">
           {() => (
-            <ProfileScreen
-              instance={instance}
-              isDeleting={isDeleting}
-              onDelete={handleDeleteInstance}
-            />
+            <WorkoutsScreen />
           )}
         </Stack.Screen>
       ) : (

@@ -8,16 +8,27 @@ type AppButtonProps = {
   disabled?: boolean;
   label: string;
   onPress: () => void | Promise<void>;
+  variant?: 'primary' | 'success';
 };
 
-export function AppButton({ disabled = false, label, onPress }: AppButtonProps) {
+export function AppButton({
+  disabled = false,
+  label,
+  onPress,
+  variant = 'primary',
+}: AppButtonProps) {
   return (
     <Pressable
       disabled={disabled}
       onPress={onPress}
       style={({ pressed }) => [
         styles.button,
-        pressed && !disabled ? styles.buttonPressed : null,
+        variant === 'success' ? styles.buttonSuccess : styles.buttonPrimary,
+        pressed && !disabled
+          ? variant === 'success'
+            ? styles.buttonSuccessPressed
+            : styles.buttonPrimaryPressed
+          : null,
         disabled ? styles.buttonDisabled : null,
       ]}
     >
@@ -29,14 +40,22 @@ export function AppButton({ disabled = false, label, onPress }: AppButtonProps) 
 const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
-    backgroundColor: colors.primary,
     borderRadius: 0,
     justifyContent: 'center',
     paddingHorizontal: spacing.lg,
     paddingVertical: 18,
   },
-  buttonPressed: {
+  buttonPrimary: {
+    backgroundColor: colors.primary,
+  },
+  buttonPrimaryPressed: {
     backgroundColor: colors.primaryPressed,
+  },
+  buttonSuccess: {
+    backgroundColor: '#1F9D55',
+  },
+  buttonSuccessPressed: {
+    backgroundColor: '#188448',
   },
   buttonDisabled: {
     opacity: 0.7,
